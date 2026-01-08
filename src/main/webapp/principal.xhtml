@@ -1,16 +1,44 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:f="http://java.sun.com/jsf/core"      
-      xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
 
 <h:head>
-<title>
-principal
-</title>
+	<title>principal</title>
+	<h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
 </h:head>
 
 <h:body>
 Bienvenido
+
+<h:dataTable id="tblEmpleados"  var="em" value="#{PrincipalController.empleados}" headerClass="headerTable" rowClass="rowTable rowTableLine">
+
+		<h:column>
+			<f:facet name="header">Nombre</f:facet>
+			<h:outputText value="#{em.nombre}"></h:outputText>
+		</h:column>
+	
+		
+		<h:column>
+			<f:facet name="header">Primer apellido</f:facet>
+			<h:outputText value="#{em.primerApellido}"></h:outputText>
+		</h:column>
+		<h:column>
+			<f:facet name="header">Segundo apellido</f:facet>
+			<h:outputText value="#{em.segundoApellido}"></h:outputText>
+		</h:column>
+		<h:column>
+			<f:facet name="header">Puesto</f:facet>
+<h:outputText value="#{em.puesto}"></h:outputText>
+		</h:column>
+		<h:column>
+			<f:facet name="header">Estatus</f:facet>
+<h:outputText value="#{em.estatus ? 'Habilitado' : 'Deshabilitado'}"></h:outputText>
+		</h:column>
+
+
+	</h:dataTable>
+
 </h:body>
 
 </html>

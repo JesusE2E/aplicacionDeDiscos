@@ -83,6 +83,7 @@ ec.redirect(pagina);
 					new FacesMessage(FacesMessage.SEVERITY_ERROR, "Usuario Incorrecto", "The full info error"));
 		}
 		System.out.println("The user name is :" + user);
+		System.out.println("Codigo Actual :" + user);
 	}
 
 }

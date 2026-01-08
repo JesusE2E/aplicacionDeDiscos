@@ -1,25 +1,45 @@
 
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:f="http://java.sun.com/jsf/core"      
-      xmlns:h="http://java.sun.com/jsf/html">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="jakarta.faces.core"
+	xmlns:h="jakarta.faces.html" xmlns:p="http://primefaces.org/ui">
 
-      <h:head>
- <h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
-           </h:head>
-      <h:body>
-       <h:form id="formLogin">
-       <h:panelGrid columns="2">
-       
-       <h:outputLabel value="Usuario" styleClass="colorText"></h:outputLabel>
-       <h:inputText id="txtUser" value="#{LoginController.user}" required="true" requiredMessage="The user name is required"></h:inputText>
-       
-         <h:outputLabel value="Contraseña" styleClass="colorText"></h:outputLabel>
-       <h:inputSecret id="txtPassword" value="#{LoginController.password}" required="true" requiredMessage="The paswword is required"></h:inputSecret>
-       
-       <h:commandButton value="Entrar" action="#{LoginController.loginButton}"></h:commandButton>
-       
-       </h:panelGrid>
-</h:form>
-      </h:body>
-      
-      </html>
+<h:head>
+	<!-- ><h:outputStylesheet library="css" name="style.css"></h:outputStylesheet> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+</h:head>
+<h:body>
+	<div class="ui-fluid">
+		<h:form id="formLogin">
+			<p:panel id="pnLLogin" header="Inicio de Session">
+
+				<p:growl id="growl" />
+				<p:panelGrid columns="1"
+					columnClasses="ui-g-12 ui-md-12,ui-g-12 ui-grid-col-12"
+					layout="grid" styleClass="ui-panelgrid-blank ui-fluid"
+					style="border:0px none;text-align:center; background-color:transparent;">
+					<p:graphicImage name="imgs/user-login-icon-29.png" />
+					<p:outputLabel style="float: left" for="txtUser" value="Usuario"
+						styleClass="colorText"></p:outputLabel>
+					<p:inputText id="txtUser" value="#{LoginController.user}"
+						required="true"></p:inputText>
+
+					<p:outputLabel style="float: left" for="Password"
+						value="Contraseña" styleClass="colorText"></p:outputLabel>
+					<p:password id="Password" value="#{LoginController.password}"
+						required="true"></p:password>
+					<p:outputLabel></p:outputLabel>
+					<p:commandButton update="@form growl" value="Entrar"
+						action="#{LoginController.loginButton}" />
+
+				</p:panelGrid>
+
+
+			</p:panel>
+		</h:form>
+	</div>
+
+
+
+
+</h:body>
+
+</html>

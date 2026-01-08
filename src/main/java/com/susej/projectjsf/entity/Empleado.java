@@ -4,7 +4,7 @@
 package com.susej.projectjsf.entity;
 
 import java.io.Serializable;
-import java.util.List;
+
 
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Named;
@@ -33,7 +33,7 @@ public class Empleado implements Serializable{
 		this.estatus = estatus;
 	}
 	public Empleado() {
-		this.nombre="je";
+		
 	}
 	/**
 	 * @return the nombre

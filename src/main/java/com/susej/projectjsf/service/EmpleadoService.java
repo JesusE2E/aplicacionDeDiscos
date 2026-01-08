@@ -9,7 +9,7 @@ import java.util.List;
 import com.susej.projectjsf.entity.Empleado;
 
 import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.enterprise.context.RequestScoped;
+
 
 /**
  * Clase que permite realiza la logica de negocios para empleados
